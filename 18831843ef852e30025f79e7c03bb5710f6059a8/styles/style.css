@@ -277,3 +277,12 @@ p a {
   width: 450px;
   height: 150px;
 }
+
+.tool-holder, .tool-holder:hover {
+  width: 100%;
+  height: 20px;
+  font-size: 25px;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+}
