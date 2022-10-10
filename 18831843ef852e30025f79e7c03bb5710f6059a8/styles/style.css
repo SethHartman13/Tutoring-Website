@@ -175,8 +175,6 @@ h1 {
 
 p {
   font-size: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 img.Home {
@@ -285,4 +283,9 @@ p a {
   background-color: white;
   cursor: pointer;
   color: black;
+}
+
+p.main {
+  padding-left: 40px;
+  padding-right: 40px;
 }
