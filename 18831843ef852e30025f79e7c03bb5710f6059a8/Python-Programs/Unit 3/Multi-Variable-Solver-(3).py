@@ -51,13 +51,15 @@ class input_management:
         return calc
 
 class array_handlers:
-    def create_array(Ax, Ay, Bx, By, Xcon, Ycon):
-        A = np.array([[Ax, Bx],
-                      [Ay, By]])
+    def create_array(Ax, Ay, Az, Bx, By, Bz, Cx, Cy, Cz, Xcon, Ycon, Zcon):
+        A = np.array([[Ax, Bx, Cx],
+                      [Ay, By, Cy],
+                      [Az, Bz, Cz]])
         A_inv = np.linalg.inv(A)
 
-        B1 = np.array([[0, Ycon],
-                    [0, Xcon]])
+        B1 = np.array([[0, 0, Ycon],
+                       [0, 0, Xcon],
+                       [0, 0, Zcon]])
 
         B2 = np.array([[0, Xcon],
                     [0, Ycon]])
@@ -91,6 +93,13 @@ class main:
             user_input, valid_input = input_management.input_validator(user_input)
         Ay = input_management.trig_determiner(user_input)
         print()
+
+        valid_input = "n"
+        while valid_input == "n":
+            user_input = input("Does Az include a trig function? ").lower()
+            user_input, valid_input = input_management.input_validator(user_input)
+        Az = input_management.trig_determiner(user_input)
+        print()
         
         valid_input = "n"
         while valid_input == "n":
@@ -105,13 +114,43 @@ class main:
             user_input, valid_input = input_management.input_validator(user_input)
         By = input_management.trig_determiner(user_input)
         print()
+
+        valid_input = "n"
+        while valid_input == "n":
+            user_input = input("Does Bz include a trig function? ").lower()
+            user_input, valid_input = input_management.input_validator(user_input)
+        Bz = input_management.trig_determiner(user_input)
+        print()
+
+        valid_input = "n"
+        while valid_input == "n":
+            user_input = input("Does Cx include a trig function? ").lower()
+            user_input, valid_input = input_management.input_validator(user_input)
+        Cx = input_management.trig_determiner(user_input)
+        print()
+
+        valid_input = "n"
+        while valid_input == "n":
+            user_input = input("Does Cy include a trig function? ").lower()
+            user_input, valid_input = input_management.input_validator(user_input)
+        Cy = input_management.trig_determiner(user_input)
+        print()
+
+        valid_input = "n"
+        while valid_input == "n":
+            user_input = input("Does Cz include a trig function? ").lower()
+            user_input, valid_input = input_management.input_validator(user_input)
+        Cz = input_management.trig_determiner(user_input)
+        print()
     
         Xcon = float(input("Enter value of the x-axis constant. "))
         print()
         Ycon = float(input("Enter value of the y-axis constant. "))
         print()
+        Zcon = float(input("Enter value of the Z-axis constant. "))
+        print()
 
-        array_handlers.create_array(Ax, Ay, Bx, By, Xcon, Ycon)
+        array_handlers.create_array(Ax, Ay, Az, Bx, By, Bz, Cx, Cy, Cz, Xcon, Ycon, Zcon)
 
 
 if __name__ == "__main__":
