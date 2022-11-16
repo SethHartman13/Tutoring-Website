@@ -24,5 +24,4 @@ print(solve((eq1, eq2, eq3), (a, b, c)))
 
 txt = dict(solve((eq1, eq2, eq3), (a, b, c)))
 
-x = txt[a]
-print(x)
+print(f"{txt[a]:.3f}")
